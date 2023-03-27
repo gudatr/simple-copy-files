@@ -102,7 +102,7 @@ function help() {
     types - file types to copy
     e.g.: types=.png,.html,.css
     
-    npm run simplecopyfiles source=./src/views destination=./build/views types=.png,.html,.css`);
+    npm exec simplecopyfiles source=./src/views destination=./build/views types=.png,.html,.css`);
 
     exit();
 }
