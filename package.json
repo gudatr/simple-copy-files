@@ -1,6 +1,6 @@
 {
   "name": "simple-copy-files",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A simple but powerful cli command to copy files during e.g. a build without dependencies",
   "main": "./lib/index.js",
   "bin": {
@@ -22,8 +22,13 @@
     "files",
     "copy files",
     "build",
-    "simplecopyfiles",
-    "0 dependencies"
+    "0 dependencies",
+    "cli",
+    "command",
+    "front-end",
+    "back-end",
+    "frontend",
+    "backend"
   ],
   "devDependencies": {
     "@types/node": "^18.15.10"
