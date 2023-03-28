@@ -1,6 +1,6 @@
 {
   "name": "simple-copy-files",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple but powerful cli command to copy files during e.g. a build without dependencies",
   "main": "./lib/index.js",
   "bin": {
