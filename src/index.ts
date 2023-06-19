@@ -21,6 +21,9 @@ let _types: string[] = [];
  * @param destination the destionation to copy new files to
  */
 async function openFolder(currentFilepath: string, types: string[], baseFolder: string, destination: string) {
+
+    await fs.mkdir(path.join(destination, baseFolder), { recursive: true });
+
     let files = await fs.readdir(currentFilepath);
 
     for (let file of files) {
@@ -28,10 +31,10 @@ async function openFolder(currentFilepath: string, types: string[], baseFolder: 
 
         if ((await fs.lstat(subFilepath)).isDirectory()) {
             let newBaseFolder = path.join(baseFolder, file);
-            openFolder(subFilepath, types, newBaseFolder, destination); continue;
+            openFolder(subFilepath, types, newBaseFolder, destination);
+        } else {
+            copyFile(file, subFilepath, types, baseFolder, destination);
         }
-
-        copyFile(file, subFilepath, types, baseFolder, destination);
     }
 }
 
@@ -51,7 +54,6 @@ async function copyFile(filename: string, currentFilepath: string, types: string
         let desinationFolder = path.join(destination, baseFolder);
         let newFilename = path.join(desinationFolder, filename);
 
-        await fs.mkdir(desinationFolder, { recursive: true });
         fs.copyFile(currentFilepath, newFilename);
     }
 }
